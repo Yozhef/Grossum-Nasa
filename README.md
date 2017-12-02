@@ -1,73 +1,68 @@
-Symfony Standard Edition
-========================
+TASK:
+====
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+# Basic Symfony Backend Developer Interview
 
-What's inside?
---------------
+Dear candidate, please follow this readme and solve all questions.
 
-The Symfony Standard Edition is configured with the following defaults:
+> Before you can start, you should prepare your development environment.
 
-  * An AppBundle you can use to start coding;
+**This test requires:**
+- access to the internet
+- your favourite IDE
+- working dev environment (PHP 5.6 or PHP 7.1)
+- database (MySQL or MongoDB)
 
-  * Twig as the only configured template engine;
+**Good luck!**
 
-  * Doctrine ORM/DBAL;
 
-  * Swiftmailer;
+--------
 
-  * Annotations enabled for everything.
 
-It comes pre-configured with the following bundles:
+## Test tasks:
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+**NOTE:** Please develop tasks below in Symfony 2(or 3):
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+1. Specify a default controller
+  - for route `/`
+  - with a proper json return `{"hello":"world!"}`
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+2. Use the api.nasa.gov
+  - the API-KEY is `N7LkblDsc5aen05FJqBQ8wU4qSdmsftwJagVK7UD`
+  - documentation: https://api.nasa.gov/neo/?api_key=N7LkblDsc5aen05FJqBQ8wU4qSdmsftwJagVK7UD
+  
+3. Write a command
+  - to request the data from the last 3 days from nasa api
+  - response contains count of Near-Earth Objects (NEOs)
+  - persist the values in your DB
+  - Define the model as follows:
+    - date
+    - reference (neo_reference_id)
+    - name
+    - speed (kilometers_per_hour)
+    - is hazardous (is_potentially_hazardous_asteroid)
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+4. Create a route `/neo/hazardous`
+  - display all DB entries which contain potentially hazardous asteroids
+  - format JSON
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+5. Create a route `/neo/fastest?hazardous=(true|false)`
+  - for data already in internal database
+  - calculate and return the model of the fastest asteroid
+  - with a hazardous parameter, where `true` means `is hazardous`
+  - default hazardous value is `false`
+  - format JSON
+   
+## Additional Instructions
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+- After you're done, provide us the link to your repository.
+- Leave comments where you were not sure how to properly proceed.
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
+## Bonus Points
 
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
-# Grossum-Nasa
+- Clean code!
+- Test.
+- Knowledge of application flow.
+- Knowledge of modern best practices/coding patterns.
+- Componential thinking.
