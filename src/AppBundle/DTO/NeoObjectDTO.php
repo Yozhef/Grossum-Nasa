@@ -128,6 +128,4 @@ class NeoObjectDTO
 
         return $this;
     }
-
-
 }

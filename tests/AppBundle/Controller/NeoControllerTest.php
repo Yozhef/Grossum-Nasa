@@ -25,7 +25,6 @@ class NeoControllerTest extends WebTestCase
         $client->request('GET', '/hazardouss');
 
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
-
     }
 
     public function testFastestDefaultParamsDataIndex()
@@ -38,7 +37,6 @@ class NeoControllerTest extends WebTestCase
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertContains($content, $testData);
-
     }
 
     public function testFastestParamsFalseDataIndex()
@@ -65,7 +63,4 @@ class NeoControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertContains($content, $testData);
     }
-
-
-
 }

@@ -8,7 +8,6 @@ use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Component\HttpFoundation\Request;
 
-
 /**
  * Class NeoController
  * @Route("/neo")
@@ -45,5 +44,4 @@ class NeoController extends FOSRestController
 
         return $neo;
     }
-
 }

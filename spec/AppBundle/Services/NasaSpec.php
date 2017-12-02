@@ -13,26 +13,23 @@ use Prophecy\Argument;
 
 class NasaSpec extends ObjectBehavior
 {
-
-    function let(EntityManager $em)
+    public function let(EntityManager $em)
     {
-
         $this->beConstructedWith($em);
-
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('AppBundle\Services\Nasa');
     }
 
 
-    function it_is_save_neo_object(EntityManager $em, NearEarthObjectRepository $earthObjectRepository)
+    public function it_is_save_neo_object(EntityManager $em, NearEarthObjectRepository $earthObjectRepository)
     {
         $em->getRepository(Argument::exact(NearEarthObject::class))->willReturn($earthObjectRepository);
     }
 
-    function it_is_created_neo_object_dto($neoObject, NeoObjectDTO $neoObjectDTO)
+    public function it_is_created_neo_object_dto($neoObject, NeoObjectDTO $neoObjectDTO)
     {
         $neoObject->neo_reference_id = 123213;
         $neoObject->name = 'Yozhef';
@@ -42,6 +39,4 @@ class NasaSpec extends ObjectBehavior
 
         $this->createdNeoObjectDTO($neoObject)->willReturn($neoObjectDTO);
     }
-
-
 }

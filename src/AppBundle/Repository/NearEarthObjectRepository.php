@@ -5,7 +5,6 @@ namespace AppBundle\Repository;
 use AppBundle\Entity\NearEarthObject;
 use Doctrine\ORM\EntityRepository;
 
-
 /**
  * NearEarthObjectRepository
  *
@@ -58,5 +57,4 @@ class NearEarthObjectRepository extends EntityRepository
             ->getQuery()
             ->getResult();
     }
-
 }

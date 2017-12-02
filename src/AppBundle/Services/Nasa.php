@@ -36,7 +36,6 @@ class Nasa implements NasaInterface
      */
     public function getRoute(ParamRequestDTO $paramRequestDTO)
     {
-
         $url = 'https://api.nasa.gov/neo/rest/v1/feed?'
             . 'start_date=' . $paramRequestDTO->getStartDate()->format('Y-m-d')
             . '&end_date=' . $paramRequestDTO->getEndDate()->format('Y-m-d')
@@ -54,7 +53,6 @@ class Nasa implements NasaInterface
      */
     public function getResponse(string $url)
     {
-
         $client = new Guzzle;
         $response = $client->request('GET', $url);
 
@@ -112,7 +110,6 @@ class Nasa implements NasaInterface
      */
     public function createdNeoObjectDTO($neoObject)
     {
-
         $neoObjectDTO = new NeoObjectDTO();
         $neoObjectDTO->setReference($neoObject->neo_reference_id)
                      ->setName($neoObject->name)

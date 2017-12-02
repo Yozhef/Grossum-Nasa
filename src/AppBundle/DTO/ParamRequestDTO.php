@@ -102,5 +102,4 @@ class ParamRequestDTO
 
         return $this;
     }
-
 }

@@ -2,7 +2,6 @@
 
 namespace AppBundle\Interfaces\Service;
 
-
 use AppBundle\DTO\NeoObjectDTO;
 use AppBundle\DTO\ParamRequestDTO;
 

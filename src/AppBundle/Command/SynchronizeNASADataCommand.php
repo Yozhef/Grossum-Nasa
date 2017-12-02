@@ -56,13 +56,12 @@ class SynchronizeNASADataCommand extends ContainerAwareCommand
     {
         $nowDate = new \DateTime();
         $paramRequestDTO = new ParamRequestDTO();
-        $paramRequestDTO->setStartDate(date_modify(clone $nowDate,"-".$interval." days"))
+        $paramRequestDTO->setStartDate(date_modify(clone $nowDate, "-".$interval." days"))
                         ->setEndDate($nowDate)
                         ->setDetailed($detailed)
                         ->setApiKey($this->getContainer()->getParameter('nasa_api_key'));
 
         return $paramRequestDTO;
-
     }
 
     /**
