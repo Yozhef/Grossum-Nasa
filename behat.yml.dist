@@ -1,0 +1,29 @@
+default:
+    suites:
+        api:
+            paths:
+                - %paths.base%/features/Api/
+            contexts:
+                - json_spec
+                - FeatureContex
+#                - BehatTest\ApiV1FeatureContext:
+#                    parameters:
+#                         verify_ssl: false
+#                         token_url: oauth/v2/token
+            filters:
+                tags: ~@skip
+
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                bootstrap: ""
+                env: behat
+        Knp\FriendlyContexts\Extension: ~
+#        JsonSpec\Behat\Extension: ~
+#        Liuggio\Fastest\Behat\ListFeaturesExtension\Extension: ~
+        Behat\MinkExtension:
+            base_url: http://127.0.0.1:8000/app_test.php/
+            files_path: %paths.base%/features/bootstrap/data/
+            sessions:
+                default:
+                    symfony2: ~
